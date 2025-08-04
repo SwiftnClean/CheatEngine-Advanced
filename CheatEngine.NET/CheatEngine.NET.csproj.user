@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="GUI\AutoAssemblerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\DisassemblerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\LuaScriptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\MemoryViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\PointerScannerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\ProcessListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\ProcessSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\RainbowPcButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

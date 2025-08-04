@@ -126,7 +126,7 @@ namespace CheatEngine.NET.GUI
             statusStrip.Items["statusLabel"].Text = message;
         }
 
-        private void btnSelectProcess_Click(object sender, EventArgs e)
+        private void rainbowPcButton_Click(object sender, EventArgs e)
         {
             ShowProcessListForm();
         }
@@ -138,12 +138,12 @@ namespace CheatEngine.NET.GUI
         
         private void ShowProcessListForm()
         {
-            // Show process list form
-            using (ProcessListForm processListForm = new ProcessListForm())
+            // Show process selection form
+            using (ProcessSelectForm processSelectForm = new ProcessSelectForm())
             {
-                if (processListForm.ShowDialog() == DialogResult.OK)
+                if (processSelectForm.ShowDialog() == DialogResult.OK)
                 {
-                    ProcessSelected(processListForm.SelectedProcessId, processListForm.SelectedProcessName);
+                    ProcessSelected(processSelectForm.SelectedProcessId, processSelectForm.SelectedProcessName);
                 }
             }
         }

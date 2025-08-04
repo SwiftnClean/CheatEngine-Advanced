@@ -54,6 +54,7 @@ namespace CheatEngine.NET.GUI
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.panelScanControls = new System.Windows.Forms.Panel();
+            this.rainbowPcButton = new CheatEngine.NET.GUI.RainbowPcButton();
             this.btnNextScan = new System.Windows.Forms.Button();
             this.btnScan = new System.Windows.Forms.Button();
             this.txtScanValue = new System.Windows.Forms.TextBox();
@@ -61,7 +62,6 @@ namespace CheatEngine.NET.GUI
             this.cmbScanType = new System.Windows.Forms.ComboBox();
             this.lblScanType = new System.Windows.Forms.Label();
             this.progressBarScan = new System.Windows.Forms.ProgressBar();
-            this.btnSelectProcess = new System.Windows.Forms.Button();
             this.lblSelectedProcess = new System.Windows.Forms.Label();
             this.dgvAddressList = new System.Windows.Forms.DataGridView();
             this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -271,6 +271,7 @@ namespace CheatEngine.NET.GUI
             // 
             // panelScanControls
             // 
+            this.panelScanControls.Controls.Add(this.rainbowPcButton);
             this.panelScanControls.Controls.Add(this.btnNextScan);
             this.panelScanControls.Controls.Add(this.btnScan);
             this.panelScanControls.Controls.Add(this.txtScanValue);
@@ -278,7 +279,6 @@ namespace CheatEngine.NET.GUI
             this.panelScanControls.Controls.Add(this.cmbScanType);
             this.panelScanControls.Controls.Add(this.lblScanType);
             this.panelScanControls.Controls.Add(this.progressBarScan);
-            this.panelScanControls.Controls.Add(this.btnSelectProcess);
             this.panelScanControls.Controls.Add(this.lblSelectedProcess);
             this.panelScanControls.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelScanControls.Location = new System.Drawing.Point(0, 0);
@@ -286,13 +286,23 @@ namespace CheatEngine.NET.GUI
             this.panelScanControls.Size = new System.Drawing.Size(800, 200);
             this.panelScanControls.TabIndex = 0;
             // 
+            // rainbowPcButton
+            // 
+            this.rainbowPcButton.BackColor = System.Drawing.Color.Black;
+            this.rainbowPcButton.ForeColor = System.Drawing.Color.White;
+            this.rainbowPcButton.Location = new System.Drawing.Point(15, 15);
+            this.rainbowPcButton.Name = "rainbowPcButton";
+            this.rainbowPcButton.Size = new System.Drawing.Size(40, 23);
+            this.rainbowPcButton.TabIndex = 8;
+            this.rainbowPcButton.Click += new System.EventHandler(this.rainbowPcButton_Click);
+            // 
             // btnNextScan
             // 
             this.btnNextScan.Enabled = false;
             this.btnNextScan.Location = new System.Drawing.Point(174, 124);
             this.btnNextScan.Name = "btnNextScan";
             this.btnNextScan.Size = new System.Drawing.Size(75, 23);
-            this.btnNextScan.TabIndex = 8;
+            this.btnNextScan.TabIndex = 7;
             this.btnNextScan.Text = "Next Scan";
             this.btnNextScan.UseVisualStyleBackColor = true;
             this.btnNextScan.Click += new System.EventHandler(this.btnNextScan_Click);
@@ -303,7 +313,7 @@ namespace CheatEngine.NET.GUI
             this.btnScan.Location = new System.Drawing.Point(93, 124);
             this.btnScan.Name = "btnScan";
             this.btnScan.Size = new System.Drawing.Size(75, 23);
-            this.btnScan.TabIndex = 7;
+            this.btnScan.TabIndex = 6;
             this.btnScan.Text = "New Scan";
             this.btnScan.UseVisualStyleBackColor = true;
             this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
@@ -314,7 +324,7 @@ namespace CheatEngine.NET.GUI
             this.txtScanValue.Location = new System.Drawing.Point(93, 95);
             this.txtScanValue.Name = "txtScanValue";
             this.txtScanValue.Size = new System.Drawing.Size(156, 23);
-            this.txtScanValue.TabIndex = 6;
+            this.txtScanValue.TabIndex = 5;
             // 
             // lblScanValue
             // 
@@ -322,7 +332,7 @@ namespace CheatEngine.NET.GUI
             this.lblScanValue.Location = new System.Drawing.Point(12, 98);
             this.lblScanValue.Name = "lblScanValue";
             this.lblScanValue.Size = new System.Drawing.Size(38, 15);
-            this.lblScanValue.TabIndex = 5;
+            this.lblScanValue.TabIndex = 4;
             this.lblScanValue.Text = "Value:";
             // 
             // cmbScanType
@@ -333,7 +343,7 @@ namespace CheatEngine.NET.GUI
             this.cmbScanType.Location = new System.Drawing.Point(93, 66);
             this.cmbScanType.Name = "cmbScanType";
             this.cmbScanType.Size = new System.Drawing.Size(156, 23);
-            this.cmbScanType.TabIndex = 4;
+            this.cmbScanType.TabIndex = 3;
             // 
             // lblScanType
             // 
@@ -341,7 +351,7 @@ namespace CheatEngine.NET.GUI
             this.lblScanType.Location = new System.Drawing.Point(12, 69);
             this.lblScanType.Name = "lblScanType";
             this.lblScanType.Size = new System.Drawing.Size(62, 15);
-            this.lblScanType.TabIndex = 3;
+            this.lblScanType.TabIndex = 2;
             this.lblScanType.Text = "Scan Type:";
             // 
             // progressBarScan
@@ -351,22 +361,12 @@ namespace CheatEngine.NET.GUI
             this.progressBarScan.Location = new System.Drawing.Point(12, 165);
             this.progressBarScan.Name = "progressBarScan";
             this.progressBarScan.Size = new System.Drawing.Size(776, 23);
-            this.progressBarScan.TabIndex = 2;
-            // 
-            // btnSelectProcess
-            // 
-            this.btnSelectProcess.Location = new System.Drawing.Point(12, 12);
-            this.btnSelectProcess.Name = "btnSelectProcess";
-            this.btnSelectProcess.Size = new System.Drawing.Size(100, 23);
-            this.btnSelectProcess.TabIndex = 1;
-            this.btnSelectProcess.Text = "Select Process";
-            this.btnSelectProcess.UseVisualStyleBackColor = true;
-            this.btnSelectProcess.Click += new System.EventHandler(this.btnSelectProcess_Click);
+            this.progressBarScan.TabIndex = 1;
             // 
             // lblSelectedProcess
             // 
             this.lblSelectedProcess.AutoSize = true;
-            this.lblSelectedProcess.Location = new System.Drawing.Point(118, 16);
+            this.lblSelectedProcess.Location = new System.Drawing.Point(171, 20);
             this.lblSelectedProcess.Name = "lblSelectedProcess";
             this.lblSelectedProcess.Size = new System.Drawing.Size(131, 15);
             this.lblSelectedProcess.TabIndex = 0;
@@ -472,6 +472,7 @@ namespace CheatEngine.NET.GUI
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
         private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.Panel panelScanControls;
+        private CheatEngine.NET.GUI.RainbowPcButton rainbowPcButton;
         private System.Windows.Forms.Button btnNextScan;
         private System.Windows.Forms.Button btnScan;
         private System.Windows.Forms.TextBox txtScanValue;
@@ -479,7 +480,6 @@ namespace CheatEngine.NET.GUI
         private System.Windows.Forms.ComboBox cmbScanType;
         private System.Windows.Forms.Label lblScanType;
         private System.Windows.Forms.ProgressBar progressBarScan;
-        private System.Windows.Forms.Button btnSelectProcess;
         private System.Windows.Forms.Label lblSelectedProcess;
         private System.Windows.Forms.DataGridView dgvAddressList;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAddress;

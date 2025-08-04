@@ -98,6 +98,18 @@ namespace CheatEngine.NET.Native
 
         #endregion
 
+        #region Delegates
+
+        /// <summary>
+        /// Delegate for the EnumWindows callback
+        /// </summary>
+        /// <param name="hWnd">Window handle</param>
+        /// <param name="lParam">Application-defined value</param>
+        /// <returns>True to continue enumeration, false to stop</returns>
+        public delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
+
+        #endregion
+
         #region Structures
 
         [StructLayout(LayoutKind.Sequential)]
@@ -218,6 +230,28 @@ namespace CheatEngine.NET.Native
             IntPtr hProcess,
             out bool Wow64Process);
 
+        // Window enumeration and manipulation functions
+        [DllImport("user32.dll")]
+        public static extern bool EnumWindows(EnumWindowsProc lpEnumFunc, IntPtr lParam);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern bool IsWindowVisible(IntPtr hWnd);
+
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern IntPtr GetForegroundWindow();
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
         #endregion
 
         #region Helper Methods
@@ -273,6 +307,19 @@ namespace CheatEngine.NET.Native
             }
 
             return functionAddress;
+        }
+
+        /// <summary>
+        /// Gets the text of a window
+        /// </summary>
+        /// <param name="hWnd">The window handle</param>
+        /// <returns>The window text</returns>
+        public static string GetWindowText(IntPtr hWnd)
+        {
+            int length = 256;
+            StringBuilder sb = new StringBuilder(length);
+            GetWindowText(hWnd, sb, length);
+            return sb.ToString();
         }
 
         #endregion

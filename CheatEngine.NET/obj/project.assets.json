@@ -813,7 +813,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "Microsoft.Diagnostics.Runtime >= 2.2.0",
+      "Microsoft.Diagnostics.Runtime >= 2.2.332001",
       "NLua >= 1.6.0",
       "System.Management >= 6.0.0",
       "System.Security.Principal.Windows >= 5.0.0"
@@ -827,11 +827,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\@ SWIFT\\############# Project Better\\CheatEngine\\converted\\CheatEngine.NET\\CheatEngine.NET.csproj",
+      "projectUniqueName": "D:\\@ SWIFT\\############# Project Better\\CheatEngine\\converted\\CheatEngine-Advanced\\CheatEngine.NET\\CheatEngine.NET.csproj",
       "projectName": "CheatEngine.NET",
-      "projectPath": "D:\\@ SWIFT\\############# Project Better\\CheatEngine\\converted\\CheatEngine.NET\\CheatEngine.NET.csproj",
+      "projectPath": "D:\\@ SWIFT\\############# Project Better\\CheatEngine\\converted\\CheatEngine-Advanced\\CheatEngine.NET\\CheatEngine.NET.csproj",
       "packagesPath": "C:\\Users\\hackf\\.nuget\\packages\\",
-      "outputPath": "D:\\@ SWIFT\\############# Project Better\\CheatEngine\\converted\\CheatEngine.NET\\obj\\",
+      "outputPath": "D:\\@ SWIFT\\############# Project Better\\CheatEngine\\converted\\CheatEngine-Advanced\\CheatEngine.NET\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -875,7 +875,7 @@
         "dependencies": {
           "Microsoft.Diagnostics.Runtime": {
             "target": "Package",
-            "version": "[2.2.0, )"
+            "version": "[2.2.332001, )"
           },
           "NLua": {
             "target": "Package",
@@ -912,17 +912,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "CheatEngine.NET depends on Microsoft.Diagnostics.Runtime (>= 2.2.0) but Microsoft.Diagnostics.Runtime 2.2.0 was not found. Microsoft.Diagnostics.Runtime 2.2.332001 was resolved instead.",
-      "libraryId": "Microsoft.Diagnostics.Runtime",
-      "targetGraphs": [
-        "net6.0-windows7.0"
-      ]
-    }
-  ]
+  }
 }
